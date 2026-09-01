@@ -112,6 +112,8 @@ Hands-on Infrastructure as Code experience focused on provisioning and managing 
 * Resource lifecycle management
 * Troubleshooting provisioning and destruction dependencies
 
+[View Project Repository](https://github.com/Jefferson-ohis1/Infrastructure-as-code-Terraform.git)
+
 ---
 
 ## 4. Automated Nginx Website Deployment with Ansible
@@ -132,6 +134,8 @@ Ansible automation project demonstrating configuration management and repeatable
 * Multi-host deployment
 * Deployment verification
 * SSH-based remote automation
+
+[View Project Repository](https://github.com/Jefferson-ohis1/Ansible-nginx-static-website-deployment.git)
 
 ---
 
@@ -168,6 +172,8 @@ PostgreSQL Database
 * Container lifecycle management
 * Multi-tier application troubleshooting
 
+[View Project Repository](https://github.com/Jefferson-ohis1/Using-Docker-compose-To-Deploy-A-Three-Tier-App-Kanban-App.git)
+
 ---
 
 ## 6. WordPress Two-Tier Application with Docker Compose
@@ -184,6 +190,8 @@ A Docker Compose project demonstrating deployment of a multi-container WordPress
 * Persistent storage
 * Service dependencies
 * Multi-container troubleshooting
+
+[View Project Repository](https://github.com/Jefferson-ohis1/Using-Docker-compose-To-Deploy-A-Two-Tier-App-WordPress-App.git)
 
 ---
 
