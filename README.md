@@ -2,123 +2,135 @@
 
 ## Portfolio Overview
 
-This portfolio documents my hands-on transition into **DevOps and Cloud Engineering**, combining cloud infrastructure, Infrastructure as Code, CI/CD, DevSecOps, containerization, Kubernetes, automation, networking, monitoring, and troubleshooting.
+This portfolio documents my hands-on transition into **DevOps and Cloud Engineering**, with practical projects covering AWS cloud infrastructure, Infrastructure as Code (IaC), CI/CD, DevSecOps, containerization, Kubernetes, automation, networking, monitoring, and troubleshooting.
 
-My approach is project-based and implementation-focused, with emphasis on **designing, deploying, securing, monitoring, verifying, and troubleshooting** applications and infrastructure across AWS and local development environments.
+My project-based approach emphasizes **designing, implementing, securing, deploying, validating, documenting, and troubleshooting** applications and infrastructure across AWS and local development environments.
 
-The portfolio complements my previous background in channel sales and business development by combining **technical problem-solving, cloud engineering, automation, security, and business awareness**.
-
----
+The portfolio complements my background in channel sales and business development with technical problem-solving, automation, security awareness, cross-functional collaboration, and business understanding.
 
 ## Technical Focus
 
-* ☁️ **Cloud Engineering:** AWS, EC2, VPC, IAM, S3, RDS, ECR, EKS
-* 🏗️ **Infrastructure as Code:** Terraform
-* ⚙️ **Automation:** Ansible, Bash, Linux, Python
-* 🔄 **CI/CD:** Jenkins, GitHub, automated testing
-* 🔐 **DevSecOps:** SonarCloud, Snyk, Trivy, OWASP ZAP
-* 🐳 **Containers:** Docker, Docker Compose
-* ☸️ **Orchestration:** Kubernetes, Amazon EKS
-* 📊 **Observability:** Prometheus, Grafana, application metrics and health checks
-* 🔧 **Operations:** AWS CLI, kubectl, Git, Linux troubleshooting
+- ☁️ **Cloud Engineering:** AWS, EC2, VPC, IAM, S3, RDS, ECR, EKS, Load Balancing, Auto Scaling
+- 🏗️ **Infrastructure as Code:** Terraform
+- ⚙️ **Automation:** Ansible, Bash, Linux, Python
+- 🔄 **CI/CD:** Jenkins, GitHub Actions, Git, GitHub, automated testing
+- 🔐 **DevSecOps:** Gitleaks, SonarCloud, Snyk, Trivy, OWASP ZAP
+- 🐳 **Containers:** Docker, Docker Compose
+- ☸️ **Orchestration:** Kubernetes, Amazon EKS, Helm
+- 📊 **Observability:** Prometheus, Grafana, application metrics, health checks
+- 🧪 **Testing:** Jest, SuperTest
+- 🔧 **Operations:** AWS CLI, kubectl, infrastructure validation, troubleshooting
 
 ---
 
 # Featured Projects
 
-## 1. End-to-End Node.js CI/CD & DevSecOps Pipeline on AWS
+## 1. End-to-End Node.js CI/CD & DevSecOps Platform on AWS
 
-An end-to-end DevOps and DevSecOps implementation demonstrating the software delivery lifecycle from source code through testing, security validation, containerization, artifact publishing, Kubernetes deployment, and runtime security testing.
+**Primary project repository:** [End-to-End Node.js CI/CD & DevSecOps Platform](https://github.com/Jefferson-ohis1/end-to-end-node-ci-cd-devsecops)
+
+Designed, implemented, and documented an end-to-end DevSecOps platform for a Node.js monitoring application across 11 documented phases. The project progressed from application testing and Docker containerization to cloud infrastructure, two CI/CD implementations, security governance, Kubernetes deployment, observability, autoscaling, and infrastructure teardown.
 
 ### Technologies
 
-**GitHub • Jenkins • Node.js • Jest • SuperTest • SonarCloud • Snyk • Docker • Trivy • Amazon ECR • Amazon EKS • OWASP ZAP • Terraform • Prometheus • Grafana**
+**AWS • Terraform • Jenkins • GitHub Actions • GitHub OIDC • Node.js • Express • Jest • SuperTest • Docker • Amazon ECR • Amazon EKS • Kubernetes • Helm • Gitleaks • SonarCloud • Snyk • Trivy • OWASP ZAP • Prometheus • Grafana**
 
 ### Key Capabilities
 
-* Automated CI/CD pipeline using Jenkins and GitHub
-* Jest and SuperTest automated testing
-* SonarCloud SAST and Quality Gate enforcement
-* Snyk Software Composition Analysis
-* Docker containerization
-* Trivy container image vulnerability scanning
-* Amazon ECR authentication, image publishing, and verification
-* Kubernetes/EKS deployment and validation
-* OWASP ZAP DAST against the running application
-* Application health and Prometheus metrics endpoints
-* Prometheus/Grafana monitoring
-* AWS infrastructure provisioned with Terraform
+- Tested a Node.js/Express application with Jest and SuperTest.
+- Containerized the application using a multi-stage Docker build and a non-root runtime user.
+- Provisioned AWS infrastructure using Terraform, including resources for networking, IAM, Amazon ECR, and Amazon EKS.
+- Implemented Jenkins-based CI/CD and subsequently developed GitHub Actions as a **second CI/CD implementation**, not a replacement for Jenkins.
+- Integrated automated code, dependency, container-image, and web-application security validation using SonarCloud, Snyk, Trivy, and OWASP ZAP.
+- Implemented pull-request validation and repository governance with Gitleaks secret detection, branch protection, and required status checks.
+- Configured GitHub Actions authentication to AWS using OIDC and a dedicated IAM role, avoiding reliance on long-lived AWS access keys in the workflow.
+- Published container images to Amazon ECR and deployed the application to Amazon EKS.
+- Managed Kubernetes Metrics Server separately using Terraform and Helm to support the Kubernetes Metrics API and Horizontal Pod Autoscaler (HPA).
+- Verified application health, resource metrics, Kubernetes deployment behaviour, and HPA scale-up and scale-down behaviour.
+- Documented implementation phases, architecture decisions, screenshots, verification results, and release evidence.
+- Published the final implementation as `v0.11.0 — Phase 11: Complete DevSecOps Platform` and destroyed the temporary AWS environment after validation.
 
-**Detailed implementation:** See the project's `README.md` for architecture, configuration, pipeline stages, security results, deployment evidence, verification, and troubleshooting.
+### Architecture Evolution
 
-[View Project Repository](https://github.com/Jefferson-ohis1/end-to-end-node-ci-cd-devsecops.git)
+The project evolved from a Jenkins-centred delivery implementation to a more clearly separated application-delivery and platform-management model.
 
-> An end-to-end DevOps and DevSecOps implementation.
+**Jenkins implementation:** GitHub → Jenkins → automated testing and security validation → Docker → Amazon ECR → Amazon EKS.
+
+Prometheus and Grafana were used during the Jenkins implementation, with the monitoring stack hosted on the Jenkins server.
+
+**GitHub Actions implementation:** GitHub → GitHub Actions → AWS OIDC/IAM → Amazon ECR and Amazon EKS.
+
+The Kubernetes Metrics Server dependency was managed separately through Terraform and Helm, supporting the Kubernetes Metrics API and HPA.
+
+This evolution demonstrates practical work across CI/CD automation, security integration, cloud identity, infrastructure management, Kubernetes operations, and evidence-driven validation.
+
+### Project Resources
+
+- [Main project repository](https://github.com/Jefferson-ohis1/end-to-end-node-ci-cd-devsecops)
+- [Project case study](https://github.com/Jefferson-ohis1/end-to-end-node-ci-cd-devsecops/blob/main/docs/portfolio/01-project-case-study.md)
+- [Project presentation — PowerPoint](https://github.com/Jefferson-ohis1/end-to-end-node-ci-cd-devsecops/blob/main/docs/portfolio/02-project-presentation.pptx)
+- [Portfolio summary](https://github.com/Jefferson-ohis1/end-to-end-node-ci-cd-devsecops/blob/main/docs/portfolio/03-portfolio-summary.md)
 
 ---
 
 ## 2. Java DevSecOps CI/CD Pipeline
 
-A containerized Java application delivery pipeline implementing DevSecOps practices across the software development lifecycle.
+**Repository:** [Java DevSecOps CI/CD Pipeline](https://github.com/Jefferson-ohis1/java-devsecops-ci-cd-pipeline)
+
+Built a Jenkins-based delivery pipeline for a Java 17/Spring Boot application using Maven and Docker in an AWS EC2 environment.
 
 ### Technologies
 
-**Java • Jenkins • Docker • SonarCloud • Snyk • Trivy • OWASP ZAP • AWS EC2**
+**Java 17 • Spring Boot • Maven • Jenkins • Docker • AWS EC2 • SonarCloud • Snyk • Trivy • OWASP ZAP**
 
 ### Key Capabilities
 
-* Jenkins-based CI/CD automation
-* Docker application containerization
-* SonarCloud SAST
-* Snyk dependency security analysis
-* Trivy container vulnerability scanning
-* OWASP ZAP DAST
-* Automated application build and delivery
-* Shift-Left Security practices
+- Automated application build and delivery through Jenkins.
+- Containerized the application using Docker.
+- Integrated SonarCloud for source-code analysis.
+- Integrated Snyk for dependency vulnerability analysis.
+- Used Trivy for container-image vulnerability scanning.
+- Used OWASP ZAP Baseline Scan for dynamic web-application security testing.
+- Published Docker images and archived security reports as pipeline evidence.
 
-**Detailed implementation:** See the project's `README.md` for the complete pipeline, security controls, configuration, results, and implementation evidence.
-
-
-[View Project Repository](https://github.com/Jefferson-ohis1/java-devsecops-ci-cd-pipeline.git)
-
-> A containerized Java application delivery pipeline.
+**Detailed implementation:** See the repository for pipeline configuration, security controls, implementation details, and supporting documentation.
 
 ---
 
 ## 3. AWS Infrastructure with Terraform
 
-Hands-on Infrastructure as Code experience focused on provisioning and managing AWS infrastructure through repeatable and version-controlled Terraform configurations.
+**Repository:** [Infrastructure as Code — Terraform](https://github.com/Jefferson-ohis1/Infrastructure-as-code-Terraform)
 
-### AWS Resources
+Practised provisioning and managing AWS infrastructure through repeatable, version-controlled Terraform configurations.
 
-* Amazon VPC
-* Public and private subnets
-* Route tables
-* Internet Gateway
-* Security groups
-* IAM roles and permissions
-* EC2
-* Amazon ECR
-* Amazon EKS
-* Supporting networking and infrastructure resources
+### AWS Resources and Concepts
+
+- Amazon VPC and subnet configuration
+- Public and private networking
+- Route tables and Internet Gateways
+- Security groups
+- IAM roles and permissions
+- Amazon EC2
+- Amazon ECR
+- Amazon EKS
+- Infrastructure dependencies and resource lifecycle management
 
 ### Practical Experience
 
-* Terraform-based infrastructure provisioning
-* Resource dependency management
-* Infrastructure verification
-* Terraform state management
-* AWS networking troubleshooting
-* Resource lifecycle management
-* Troubleshooting provisioning and destruction dependencies
-
-[View Project Repository](https://github.com/Jefferson-ohis1/Infrastructure-as-code-Terraform.git)
+- Terraform configuration and infrastructure provisioning
+- Resource dependency management
+- Infrastructure verification
+- Terraform state management
+- AWS networking and connectivity troubleshooting
+- Infrastructure destruction and lifecycle troubleshooting
 
 ---
 
 ## 4. Automated Nginx Website Deployment with Ansible
 
-Ansible automation project demonstrating configuration management and repeatable website deployment across multiple AWS EC2 instances.
+**Repository:** [Ansible Nginx Static Website Deployment](https://github.com/Jefferson-ohis1/Ansible-nginx-static-website-deployment)
+
+Implemented repeatable website deployment and configuration management across AWS EC2 instances.
 
 ### Technologies
 
@@ -126,32 +138,31 @@ Ansible automation project demonstrating configuration management and repeatable
 
 ### Key Capabilities
 
-* Ansible inventory and playbook configuration
-* Automated Nginx installation
-* Nginx service configuration
-* Service start and enablement
-* Static website deployment
-* Multi-host deployment
-* Deployment verification
-* SSH-based remote automation
-
-[View Project Repository](https://github.com/Jefferson-ohis1/Ansible-nginx-static-website-deployment.git)
+- Inventory and playbook configuration
+- Automated Nginx installation and configuration
+- Service start-up and enablement
+- Static website deployment
+- Multi-host automation
+- SSH-based remote execution
+- Deployment verification
 
 ---
 
 ## 5. Three-Tier Kanban Application with Docker Compose
 
-A multi-container application demonstrating practical container orchestration and communication between application tiers.
+**Repository:** [Three-Tier Kanban Application](https://github.com/Jefferson-ohis1/Using-Docker-compose-To-Deploy-A-Three-Tier-App-Kanban-App)
+
+Deployed a multi-container application demonstrating communication between frontend, backend, and database tiers.
 
 ### Architecture
 
 ```text
 Angular Frontend
-       │
-       ▼
+       |
+       v
 Java / Spring Boot Backend
-       │
-       ▼
+       |
+       v
 PostgreSQL Database
 ```
 
@@ -161,103 +172,91 @@ PostgreSQL Database
 
 ### Key Capabilities
 
-* Multi-container application architecture
-* Docker image creation
-* Docker Compose orchestration
-* Container networking
-* Port mapping
-* Service dependencies
-* PostgreSQL persistent storage
-* Application configuration
-* Container lifecycle management
-* Multi-tier application troubleshooting
-
-[View Project Repository](https://github.com/Jefferson-ohis1/Using-Docker-compose-To-Deploy-A-Three-Tier-App-Kanban-App.git)
+- Multi-container application architecture
+- Docker image creation and execution
+- Docker Compose orchestration
+- Container networking and port mapping
+- Service dependencies
+- PostgreSQL persistent storage
+- Application configuration
+- Multi-tier troubleshooting
 
 ---
 
 ## 6. WordPress Two-Tier Application with Docker Compose
 
-A Docker Compose project demonstrating deployment of a multi-container WordPress application.
+**Repository:** [WordPress Two-Tier Application](https://github.com/Jefferson-ohis1/Using-Docker-compose-To-Deploy-A-Two-Tier-App-WordPress-App)
+
+Deployed a containerized WordPress application with a separate database service using Docker Compose.
 
 ### Key Capabilities
 
-* WordPress containerization
-* Database containerization
-* Docker Compose orchestration
-* Container networking
-* Environment configuration
-* Persistent storage
-* Service dependencies
-* Multi-container troubleshooting
-
-[View Project Repository](https://github.com/Jefferson-ohis1/Using-Docker-compose-To-Deploy-A-Two-Tier-App-WordPress-App.git)
+- WordPress and database containerization
+- Docker Compose orchestration
+- Container networking
+- Environment configuration
+- Persistent storage and volumes
+- Service dependencies
+- Multi-container troubleshooting
 
 ---
 
 # AWS Cloud & Infrastructure Experience
 
-My hands-on AWS work includes designing, provisioning, configuring, and troubleshooting cloud infrastructure.
+My hands-on AWS projects cover cloud resource provisioning, configuration, access management, networking, deployment, verification, and troubleshooting.
 
 ### Compute
 
-* Amazon EC2
-* Linux server configuration
-* SSH access
-* HTTP application access
-* Security groups
-* Launch Templates
-* Auto Scaling Groups
+- Amazon EC2
+- Linux server configuration
+- SSH access and security groups
+- Launch Templates
+- Auto Scaling Groups
+- HTTP application access and verification
 
 ### Networking
 
-* Amazon VPC
-* Public and private subnets
-* Route tables
-* Internet Gateway
-* Security groups
-* Load Balancers
-* Network traffic flow and connectivity troubleshooting
+- Amazon VPC
+- Public and private subnets
+- Route tables and Internet Gateways
+- Security groups
+- Load Balancers
+- Network traffic flow and connectivity troubleshooting
 
-### Storage & Databases
+### Storage and Databases
 
-* Amazon S3
-* Object upload and management
-* Static website hosting
-* Cross-region replication
-* Amazon RDS MySQL
+- Amazon S3 object management
+- Static website hosting
+- Cross-region replication practice
+- Amazon RDS for MySQL
 
-### Identity & Security
+### Identity and Security
 
-* AWS IAM users and groups
-* Permissions and access controls
-* IAM roles
-* EC2 access controls
-* Security groups
-* SSH access
+- AWS IAM users, groups, roles, and permissions
+- Access controls and least-privilege considerations
+- EC2 access controls
+- SSH access
+- GitHub OIDC authentication to AWS
 
-### Containers & Kubernetes
+### Containers and Kubernetes
 
-* Amazon ECR
-* Amazon EKS
-* Container image publishing
-* ECR image verification
-* Kubernetes workload deployment
+- Amazon ECR image publishing and verification
+- Amazon EKS
+- Kubernetes workloads and Services
+- Application deployment and rollout verification
+- Kubernetes Metrics Server and resource metrics
+- Horizontal Pod Autoscaler validation
 
-### Cost Management
+### AWS Operations and Cost Awareness
 
-* AWS Cost Explorer
-* AWS Budgets
-* Basic cloud cost monitoring and budgeting
+- AWS CLI
+- Resource inspection and configuration verification
+- Authentication and authorization troubleshooting
+- AWS Cost Explorer
+- AWS Budgets
+- Basic cloud cost monitoring and budgeting
 
-### AWS Operations
-
-* AWS CLI
-* Resource inspection
-* Configuration
-* Authentication
-* Verification
-* Troubleshooting
+**Environment note:** The flagship DevSecOps project was validated in a temporary AWS environment that was subsequently destroyed. The repositories and documentation provide the implementation details and evidence; the project should not be interpreted as a permanently hosted live service.
 
 ---
 
@@ -265,277 +264,309 @@ My hands-on AWS work includes designing, provisioning, configuring, and troubles
 
 ## Terraform
 
-Used Terraform to provision and manage AWS infrastructure using repeatable, version-controlled Infrastructure as Code practices.
+Used Terraform to provision and manage AWS infrastructure through repeatable, version-controlled configurations.
 
-Experience includes:
+Practical work includes:
 
-* AWS networking
-* IAM
-* EC2
-* Amazon ECR
-* Amazon EKS
-* Supporting AWS resources
-* Resource dependencies
-* Infrastructure verification
-* Terraform lifecycle management
-* Troubleshooting provisioning and destruction issues
+- AWS networking and IAM
+- EC2, ECR, and EKS infrastructure
+- Resource dependencies
+- Terraform state and lifecycle management
+- Infrastructure validation
+- Troubleshooting provisioning and destruction issues
+
+Terraform was also used alongside Helm to manage the Kubernetes Metrics Server platform dependency separately from the application-delivery workflow.
 
 ## Ansible
 
 Used Ansible for configuration management and automated deployment across AWS EC2 instances.
 
-Experience includes:
+Practical work includes:
 
-* Inventory management
-* Playbook development
-* Nginx installation
-* Service configuration
-* Website deployment
-* Multi-host automation
-* Deployment verification
+- Inventory management
+- Playbook development
+- Nginx installation and service configuration
+- Website deployment
+- Multi-host automation
+- Deployment verification
 
 ---
 
 # CI/CD & DevSecOps
 
-Hands-on CI/CD experience includes both **Node.js and Java application pipelines** using Jenkins and GitHub.
+My hands-on pipeline work covers both Node.js and Java applications, using Jenkins and GitHub Actions for automated delivery workflows.
 
-### CI/CD Workflow
+## Jenkins CI/CD
+
+The Jenkins implementation integrates application testing, security validation, container-image creation, artifact publishing, Kubernetes deployment, and post-deployment checks.
 
 ```text
 GitHub
-   ↓
+   |
+   v
 Jenkins
-   ↓
+   |
+   v
 Automated Testing
-   ↓
-SonarCloud SAST
-   ↓
-Snyk SCA
-   ↓
+   |
+   v
+SonarCloud / Snyk
+   |
+   v
 Docker Build
-   ↓
-Trivy Container Scan
-   ↓
+   |
+   v
+Trivy Image Scan
+   |
+   v
 Amazon ECR
-   ↓
-Kubernetes / Amazon EKS
-   ↓
-OWASP ZAP DAST
-   ↓
-Runtime Verification & Monitoring
+   |
+   v
+Amazon EKS
+   |
+   v
+Deployment Verification
+   |
+   v
+OWASP ZAP / Runtime Checks
 ```
 
-### Security Controls
+## GitHub Actions CI/CD
 
-* **SonarCloud** — Static Application Security Testing
-* **Snyk** — Software Composition Analysis
-* **Trivy** — Container image vulnerability scanning
-* **OWASP ZAP** — Dynamic Application Security Testing
-* **Jenkins Quality Gates** — Automated security and quality validation
-* **Shift-Left Security** — Security integrated throughout the delivery lifecycle
+GitHub Actions provides a second application-delivery implementation for the flagship Node.js project.
+
+The workflow includes automated testing, Docker image building, AWS authentication through OIDC, ECR image publishing, and EKS deployment verification.
+
+The workflow uses a dedicated AWS IAM role and temporary credentials rather than relying on long-lived AWS access keys stored in GitHub Actions.
+
+## DevSecOps Governance
+
+The flagship project includes pull-request validation and repository governance controls designed to prevent unvalidated changes from entering the delivery workflow.
+
+Controls include:
+
+- Gitleaks secret detection
+- Automated tests
+- SonarCloud source-code analysis
+- Snyk dependency analysis
+- Trivy container-image scanning
+- OWASP ZAP web-application testing
+- Pull-request-based change control
+- Branch protection and required status checks
+
+These controls demonstrate the integration of security validation and change governance into the delivery process.
 
 ---
 
 # Docker & Containerization
 
-Containerized applications across multiple technology stacks, including:
+Containerized applications across multiple technology stacks, including Node.js/Express, Java/Spring Boot, Python/Django, .NET, and static websites.
 
-* Node.js / Express.js
-* Java / Spring Boot
-* Python / Django
-* .NET
-* Static websites
+### Docker Experience
 
-Hands-on Docker experience includes:
+- Dockerfile development
+- Image creation and management
+- Container execution and lifecycle operations
+- Port mapping and networking
+- Dependency installation
+- Persistent storage
+- Container troubleshooting
 
-* Dockerfile development
-* Image creation
-* Dependency installation
-* Container execution
-* Port mapping
-* Image management
-* Container lifecycle operations
-* Container troubleshooting
-* Docker networking
-* Persistent storage
+### Docker Compose Experience
 
-Docker Compose experience includes:
+- Two-tier WordPress applications
+- Three-tier Kanban applications
+- Multi-container networking
+- Service dependencies
+- Volumes and environment configuration
+- Application troubleshooting
 
-* Two-tier WordPress applications
-* Three-tier Kanban applications
-* Multi-container networking
-* Service dependencies
-* Volumes
-* Environment configuration
-* Application troubleshooting
+The flagship Node.js project also uses a multi-stage Docker build and a non-root runtime user.
 
 ---
 
 # Kubernetes & Amazon EKS
 
-Hands-on Kubernetes experience includes deploying and operating containerized workloads on Amazon EKS.
+Hands-on Kubernetes work includes deploying and validating containerized workloads on Amazon EKS.
 
-### Experience includes
+### Experience Includes
 
-* EKS cluster provisioning with Terraform
-* Kubernetes deployments
-* Application replicas
-* Kubernetes Services
-* LoadBalancer services
-* Amazon ECR image pulls
-* Image digest verification
-* Worker-node validation
-* Application health validation
-* `kubectl` operations
-* Kubernetes troubleshooting
-* Integration of Kubernetes deployment into CI/CD workflows
+- EKS cluster provisioning with Terraform
+- Kubernetes Deployments and replicas
+- Kubernetes Services and LoadBalancer services
+- Amazon ECR image integration
+- Image and rollout verification
+- Worker-node validation
+- Application health checks
+- `kubectl` operations and troubleshooting
+- Kubernetes deployment integration with CI/CD
+- Horizontal Pod Autoscaler configuration and behaviour verification
+
+### Platform Metrics and Autoscaling
+
+The flagship project separates application delivery from the Metrics Server platform dependency.
+
+Terraform and Helm manage Metrics Server, which supplies resource metrics through the Kubernetes Metrics API for use by the HPA controller.
+
+Observed HPA behaviour during validation included scaling from two replicas to four, then five, and back to two replicas.
+
+This demonstrated functional autoscaling behaviour rather than simply confirming the existence of an HPA resource.
 
 ---
 
 # Monitoring & Observability
 
-Hands-on monitoring experience includes **Prometheus and Grafana**.
+Hands-on monitoring work includes application metrics, Prometheus, Grafana, health checks, Kubernetes resource metrics, and post-deployment verification.
 
 ### Application Monitoring
 
-* Prometheus-compatible application metrics
-* Application health endpoints
-* Runtime health verification
-* Metrics collection
+- Prometheus-compatible application metrics
+- Application health endpoints
+- Runtime health verification
+- Metrics collection
 
-### Infrastructure & Kubernetes Monitoring
+### Monitoring Tools and Platform Metrics
 
-* Prometheus
-* Grafana
-* Kubernetes metrics
-* Node-level monitoring
-* Monitoring dashboards
-* Service monitoring
+- Prometheus
+- Grafana
+- Kubernetes resource metrics
+- Metrics Server and the Kubernetes Metrics API
+- Monitoring dashboards
+- Service and workload monitoring
 
-The monitoring work demonstrates practical understanding of **observability, health checks, metrics collection, operational visibility, and post-deployment verification**.
+During the Jenkins implementation, a Prometheus stack was hosted on the Jenkins server, with Grafana used for visualization. The later GitHub Actions design managed the Kubernetes Metrics Server dependency separately through Terraform and Helm.
+
+This work demonstrates practical understanding of observability, operational visibility, health checks, metrics collection, and runtime validation.
 
 ---
 
-# Application & Technology Experience
+# Application Technologies & Testing
 
-Hands-on development, deployment, and containerization experience across:
+My projects include hands-on refactoring, deployment, testing, and containerization across several application stacks.
 
-| Technology           | Experience                                        |
-| -------------------- | ------------------------------------------------- |
-| Node.js / Express.js | Application development, testing, Docker, CI/CD   |
-| Java / Spring Boot   | Application development, Docker, CI/CD, DevSecOps |
-| Python / Django      | Application deployment and containerization       |
-| .NET                 | Application deployment and containerization       |
-| Angular              | Frontend application in multi-tier architecture   |
-| PostgreSQL           | Database in Docker Compose applications           |
-| MySQL                | AWS RDS database                                  |
-| HTML/CSS/JavaScript  | Static website development and deployment         |
+| Technology | Project experience |
+|---|---|
+| Node.js / Express | Application refactoring, Jest/SuperTest, Docker, CI/CD, metrics |
+| Java / Spring Boot | Application delivery, Maven, Docker, Jenkins, DevSecOps |
+| Python / Django | Application deployment and containerization practice |
+| .NET | Application deployment and containerization practice |
+| Angular | Frontend in a multi-tier application |
+| PostgreSQL | Database in a Docker Compose application |
+| MySQL | AWS RDS database practice |
+| HTML / CSS / JavaScript | Static website development and deployment |
 
-### Testing
+### Testing Tools
 
-* Jest
-* SuperTest
-* Automated unit and application testing
+- **Jest:** Automated application testing
+- **SuperTest:** HTTP endpoint and application integration testing
+
+Testing and validation are incorporated into the delivery workflow to help verify application behaviour before deployment.
 
 ---
 
 # Security & Troubleshooting
 
-Applied security and operational practices across the application and infrastructure lifecycle.
+Applied security and operational practices across application delivery, cloud infrastructure, and containerized workloads.
 
-### Security
+### Security Practices
 
-* IAM permissions
-* AWS security groups
-* SSH access controls
-* SAST
-* SCA
-* Container vulnerability scanning
-* DAST
-* Kubernetes security considerations
-* Shift-Left Security
+- AWS IAM permissions and access controls
+- Security groups and SSH access controls
+- Source-code analysis
+- Dependency vulnerability analysis
+- Container-image vulnerability scanning
+- Dynamic web-application security testing
+- Secret detection
+- Pull-request validation and repository governance
+- OIDC-based AWS authentication for GitHub Actions
+- Kubernetes security considerations
 
-### Troubleshooting
+### Troubleshooting Experience
 
 Hands-on troubleshooting has included:
 
-* AWS networking and connectivity
-* IAM permissions
-* Terraform resource dependencies
-* Terraform lifecycle issues
-* Kubernetes resources
-* LoadBalancer provisioning
-* ECR repositories and images
-* Jenkins configuration
-* EKS connectivity
-* Docker containers and networking
-* CI/CD pipeline failures
+- AWS networking and connectivity
+- IAM permissions and authorization
+- Terraform resource dependencies and lifecycle issues
+- Kubernetes resources and cluster connectivity
+- LoadBalancer provisioning
+- ECR repositories and container images
+- Jenkins configuration and CI/CD failures
+- Docker containers and networking
+- Application health and deployment verification
+- Kubernetes resource metrics and HPA behaviour
 
-I use verification and evidence-based troubleshooting to confirm that infrastructure, applications, security controls, containers, and deployment components are functioning as expected.
+My approach emphasizes evidence-based troubleshooting: inspect the configuration, reproduce or observe the behaviour, validate the correction, and document the result.
 
 ---
 
 # Git, GitHub & Technical Documentation
 
-Hands-on Git and GitHub experience includes:
+Used Git and GitHub to manage project source code, configuration, workflows, and technical documentation.
 
-* Repository management
-* Version control
-* Commits
-* Pushes and updates
-* Branching workflows
-* Remote repository synchronization
-* Project documentation
+### Version Control and Repository Practices
 
-Technical documentation includes:
+- Repository management
+- Version control and commits
+- Branching and change management
+- Remote repository synchronization
+- Pull-request workflows and repository governance
+- Git history and release management
 
-* Architecture
-* Infrastructure configuration
-* CI/CD pipelines
-* Security controls
-* Deployment procedures
-* Verification results
-* Troubleshooting procedures
-* Implementation evidence
+### Documentation and Evidence
 
-Detailed project documentation is maintained within the individual project repositories.
+Project documentation includes:
+
+- Architecture and design decisions
+- Infrastructure configuration
+- CI/CD pipeline definitions
+- Security controls
+- Deployment procedures
+- Verification results
+- Troubleshooting guidance
+- Screenshots and implementation evidence
+- Release documentation
+
+The flagship project follows an evidence-driven workflow:
+
+```text
+Implement
+   |
+   v
+Build
+   |
+   v
+Verify
+   |
+   v
+Capture Evidence
+   |
+   v
+Document
+   |
+   v
+Commit and Push
+```
 
 ---
 
 # Core Technology Stack
 
-### Cloud
+**Cloud:** AWS, EC2, VPC, IAM, S3, RDS, ECR, EKS, Elastic Load Balancing, Auto Scaling, AWS CLI
 
-**AWS • EC2 • VPC • IAM • S3 • RDS • ECR • EKS • Elastic Load Balancing • Auto Scaling • AWS CLI**
+**DevOps & CI/CD:** Jenkins, GitHub Actions, Git, GitHub, CI/CD
 
-### DevOps & CI/CD
+**Infrastructure & Automation:** Terraform, Ansible, Linux, Bash, Python, Helm
 
-**Jenkins • Git • GitHub • CI/CD • Continuous Integration • Continuous Delivery**
+**Containers & Orchestration:** Docker, Docker Compose, Kubernetes, Amazon EKS
 
-### Infrastructure & Automation
+**DevSecOps:** Gitleaks, SonarCloud, Snyk, Trivy, OWASP ZAP
 
-**Terraform • Ansible • Linux • Bash • Python**
+**Monitoring & Observability:** Prometheus, Grafana, application metrics, Metrics Server
 
-### Containers & Orchestration
+**Applications:** Node.js, Express.js, Java, Spring Boot, Python, Django, .NET, Angular, PostgreSQL, MySQL, HTML, CSS, JavaScript
 
-**Docker • Docker Compose • Kubernetes • Amazon EKS**
-
-### DevSecOps
-
-**SonarCloud • Snyk • Trivy • OWASP ZAP**
-
-### Monitoring
-
-**Prometheus • Grafana**
-
-### Applications
-
-**Node.js • Express.js • Java • Spring Boot • Python • Django • .NET • Angular • PostgreSQL • MySQL • HTML • CSS • JavaScript**
-
-### Testing
-
-**Jest • SuperTest**
+**Testing:** Jest, SuperTest
 
 ---
 
@@ -543,56 +574,74 @@ Detailed project documentation is maintained within the individual project repos
 
 My transition into DevOps and Cloud Engineering builds on more than a decade of experience in **channel sales and business development**.
 
-That background developed strong capabilities in:
+That background developed capabilities in:
 
-* Customer and partner management
-* Stakeholder communication
-* Business requirements
-* Problem-solving
-* Cross-functional collaboration
-* Market and competitive analysis
-* Relationship management
-* Commercial awareness
+- Customer and partner management
+- Stakeholder communication
+- Business requirements and commercial priorities
+- Cross-functional collaboration
+- Market and competitive analysis
+- Negotiation and relationship management
+- Problem-solving and business awareness
 
-I now combine those capabilities with hands-on technical experience in **cloud infrastructure, automation, software delivery, security, containers, Kubernetes, monitoring, and Infrastructure as Code**.
+I now combine those capabilities with hands-on technical work in cloud infrastructure, automation, software delivery, security, containers, Kubernetes, monitoring, and Infrastructure as Code.
 
-This combination provides both a technical and business perspective when approaching technology, infrastructure, and operational challenges.
+This combination provides both technical and business perspectives when approaching technology and operational challenges.
+
+---
+
+# Portfolio Resources
+
+Explore the portfolio and supporting technical materials:
+
+- **[GitHub Profile](https://github.com/Jefferson-ohis1)** — repositories and project work
+- **[Flagship Node.js CI/CD & DevSecOps Project](https://github.com/Jefferson-ohis1/end-to-end-node-ci-cd-devsecops)** — implementation, phase documentation, configuration, and evidence
+- **[AWS DevSecOps Project Case Study](https://github.com/Jefferson-ohis1/end-to-end-node-ci-cd-devsecops/blob/main/docs/portfolio/01-project-case-study.md)** — project objectives, architecture, implementation, validation, and lessons learned
+- **[End-to-End DevSecOps Platform — Project Presentation](https://github.com/Jefferson-ohis1/end-to-end-node-ci-cd-devsecops/blob/main/docs/portfolio/02-project-presentation.pptx)** — visual project walkthrough
+- **[Portfolio Summary](https://github.com/Jefferson-ohis1/end-to-end-node-ci-cd-devsecops/blob/main/docs/portfolio/03-portfolio-summary.md)** — concise overview of the flagship project
+- **[Java DevSecOps CI/CD Pipeline](https://github.com/Jefferson-ohis1/java-devsecops-ci-cd-pipeline)** — Java-based delivery and security pipeline
+- **[Terraform AWS Infrastructure](https://github.com/Jefferson-ohis1/Infrastructure-as-code-Terraform)** — Infrastructure as Code project
 
 ---
 
 # Portfolio Summary
 
-This portfolio represents an ongoing hands-on learning and implementation journey into **DevOps and Cloud Engineering**.
-
-The projects demonstrate practical experience across the software and infrastructure lifecycle:
+This portfolio demonstrates hands-on project work across the software delivery and cloud infrastructure lifecycle.
 
 ```text
 Source Code
-    ↓
+    |
+    v
 Version Control
-    ↓
+    |
+    v
 Automated Testing
-    ↓
-Static Code Analysis
-    ↓
-Dependency Security
-    ↓
+    |
+    v
+Security Validation
+    |
+    v
 Containerization
-    ↓
-Container Security
-    ↓
+    |
+    v
 Artifact Publishing
-    ↓
+    |
+    v
 Kubernetes Deployment
-    ↓
-Runtime Security
-    ↓
-Monitoring & Observability
-    ↓
-Verification & Troubleshooting
+    |
+    v
+Observability and Autoscaling
+    |
+    v
+Verification and Troubleshooting
+    |
+    v
+Documentation and Release
+    |
+    v
+Infrastructure Cleanup
 ```
 
-The goal is to continuously expand practical capability through **implementation, experimentation, troubleshooting, documentation, and evidence-based validation**.
+The goal is to continue developing practical capability through implementation, experimentation, troubleshooting, documentation, and evidence-based validation.
 
-**GitHub Portfolio:**
-https://github.com/Jefferson-ohis1
+**GitHub Portfolio:** [github.com/Jefferson-ohis1](https://github.com/Jefferson-ohis1)
